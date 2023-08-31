@@ -9,7 +9,8 @@ namespace MidgardCharacterCreator
 	public enum EDice
 	{
 		W100,
-		W6
+		W6,
+		W3
 	}
 
 	public static class Dice
@@ -29,6 +30,9 @@ namespace MidgardCharacterCreator
 						break;
 					case EDice.W6:
 						break;
+					case EDice.W3:
+						rolls.Add(RollW3());
+						break;
 					default:
 						break;
 				}
@@ -38,5 +42,6 @@ namespace MidgardCharacterCreator
 		}
 
 		public static int RollW100() => m_Random.Next(1, 101);
+		public static int RollW3() => m_Random.Next(1, 4);
 	}
 }

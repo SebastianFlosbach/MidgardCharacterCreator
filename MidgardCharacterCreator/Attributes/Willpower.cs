@@ -15,24 +15,19 @@ namespace MidgardCharacterCreator.Attributes
 
 		public override void CalculateValue(Character character, List<int> diceRolls)
 		{
-			if (diceRolls.Count() < 1)
-				throw new ArgumentException($"Invalid number of dice rolls provided for attribute {Name}. {diceRolls.Count()} were provided, 1 needed.");
-
 			int constitution;
 			int intelligence;
 
-			if (character.Constitution.IsSet)
-				constitution = (int)character.Constitution.Value;
-			else
-				throw new ArgumentException($"Missing value for attribute {character.Constitution.Name} in character to calculate {Name}.");
+			constitution = character.Constitution.IsSet
+				? (int)character.Constitution.Value
+                : throw new ArgumentException($"Missing value for attribute {character.Constitution.Name} in character to calculate {Name}.");
 
-			if (character.Intelligence.IsSet)
-				intelligence = (int)character.Intelligence.Value;
-			else
-				throw new ArgumentException($"Missing value for attribute {character.Intelligence.Name} in character to calculate {Name}.");
+			intelligence = character.Intelligence.IsSet
+				? (int)character.Intelligence.Value
+                : throw new ArgumentException($"Missing value for attribute {character.Intelligence.Name} in character to calculate {Name}.");
 
 			// W% + 2x(Ko/10 + In/10) - 20
-			m_Value = diceRolls[0] + 4 * (constitution / 10 + intelligence / 10) - 20;
+			m_Value = Dice.RollW100() + (2 * (constitution / 10 + intelligence / 10)) - 20;
 
 			if (MinValue.TryGetValue(character.Race, out int min))
 				if (m_Value < min)

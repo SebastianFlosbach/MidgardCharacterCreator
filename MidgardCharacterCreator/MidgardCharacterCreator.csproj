@@ -50,6 +50,7 @@
     <Compile Include="Attributes\Intelligence.cs" />
     <Compile Include="Attributes\Life.cs" />
     <Compile Include="Attributes\MagicSkill.cs" />
+    <Compile Include="Attributes\Movement.cs" />
     <Compile Include="Attributes\Strength.cs" />
     <Compile Include="Attributes\Willpower.cs" />
     <Compile Include="CharacterCreator.cs" />

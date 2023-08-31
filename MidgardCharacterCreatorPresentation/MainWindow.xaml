@@ -35,7 +35,7 @@
             <Grid Grid.Column="0">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="150"/>
-                    <ColumnDefinition Width="150"/>
+                    <ColumnDefinition Width="200"/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
 
@@ -54,53 +54,61 @@
                     Grid.Column="0" 
                     Grid.Row="0" 
                     AttributeName="Stärke"
-                    AttributeValue="{Binding StrengthValue}"/>
+                    AttributeValue="{Binding StrengthValue, Mode=TwoWay}"/>
                 <uc:CharacterAttributeBox 
                     Grid.Column="0" 
                     Grid.Row="1" 
                     AttributeName="Gewandheit"
-                    AttributeValue="{Binding AgilityValue}"/>
+                    AttributeValue="{Binding AgilityValue, Mode=TwoWay}"/>
                 <uc:CharacterAttributeBox 
                     Grid.Column="0" 
                     Grid.Row="2" 
                     AttributeName="Geschicklichkeit"
-                    AttributeValue="{Binding }"/>
+                    AttributeValue="{Binding DexterityValue, Mode=TwoWay}"/>
                 <uc:CharacterAttributeBox 
                     Grid.Column="0" 
                     Grid.Row="3" 
                     AttributeName="Konstitution"
-                    AttributeValue="{Binding }"/>
+                    AttributeValue="{Binding ConstitutionValue, Mode=TwoWay}"/>
                 <uc:CharacterAttributeBox 
                     Grid.Column="0" 
                     Grid.Row="4" 
                     AttributeName="Intelligenz"
-                    AttributeValue="{Binding }"/>
+                    AttributeValue="{Binding IntelligenceValue, Mode=TwoWay}"/>
                 <uc:CharacterAttributeBox 
                     Grid.Column="0" 
                     Grid.Row="5" 
                     AttributeName="Zaubertalent"
-                    AttributeValue="{Binding }"/>
+                    AttributeValue="{Binding MagicSkillValue, Mode=TwoWay}"/>
 
                 <uc:CharacterAttributeButton
                     Grid.Column="1"
                     Grid.Row="0"
                     AttributeName="Aussehen"
-                    AttributeValue="{Binding }"/>
+                    AttributeValue="{Binding AppereanceValue, Mode=TwoWay}"
+                    AttributeButtonCommand="{Binding CalculateAppereance}"
+                    AttributeIsEnabled="{Binding CalculateAppereanceEnabled}"/>
                 <uc:CharacterAttributeButton
                     Grid.Column="1"
                     Grid.Row="1"
                     AttributeName="pers. Aus."
-                    AttributeValue="{Binding }"/>
+                    AttributeValue="{Binding CharismaValue, Mode=TwoWay}"
+                    AttributeButtonCommand="{Binding CalculateCharisma}"
+                    AttributeIsEnabled="{Binding CalculateCharismaEnabled}"/>
                 <uc:CharacterAttributeButton
                     Grid.Column="1"
                     Grid.Row="2"
                     AttributeName="Willenskraft"
-                    AttributeValue="{Binding }"/>
+                    AttributeValue="{Binding WillpowerValue, Mode=TwoWay}"
+                    AttributeButtonCommand="{Binding CalculateWillpower}"
+                    AttributeIsEnabled="{Binding CalculateWillpowerEnabled}"/>
                 <uc:CharacterAttributeButton
                     Grid.Column="1"
                     Grid.Row="4"
                     AttributeName="Bewegung"
-                    AttributeValue="{Binding }"/>
+                    AttributeValue="{Binding MovementValue, Mode=TwoWay}"
+                    AttributeButtonCommand="{Binding CalculateMovement}"
+                    AttributeIsEnabled="{Binding CalculateMovementEnabled}"/>
             </Grid>
 
             <ItemsControl 

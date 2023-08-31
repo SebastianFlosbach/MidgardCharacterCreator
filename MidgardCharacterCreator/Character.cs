@@ -70,5 +70,9 @@ namespace MidgardCharacterCreator
 
 		private readonly Appeareance m_Appeareance = new Appeareance();
 		public IAttribute Appearance { get => m_Appeareance; }
+
+		private readonly Movement m_Movement = new Movement();
+
+		public IAttribute Movement { get => m_Movement; }
 	}
 }

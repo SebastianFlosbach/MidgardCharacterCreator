@@ -17,10 +17,13 @@
                    Padding="5 10 5 10"
                    HorizontalAlignment="Left"
                    Text="{Binding AttributeName, RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}}" />
-        <TextBlock Grid.Column="1" 
-                   Text="{Binding AttributeValue, RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}}"/>
+        <Label Grid.Column="1" 
+               Content="{Binding AttributeValue, RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}}"
+               BorderBrush="Black"
+               BorderThickness="1"
+               Margin="1"/>
         <Button Grid.Column="2"
-                Margin="10 10 10 10"
+                Margin="2"
                 IsEnabled="{Binding AttributeIsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}}"
                 Command="{Binding AttributeButtonCommand, RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}}"/>
 
